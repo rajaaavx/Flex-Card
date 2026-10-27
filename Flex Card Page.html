@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Flex Card — One card. A world of possibilities.</title>
+<meta name="description" content="Flex Card is a physical card that opens a digital destination with a tap.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,700;1,700&display=swap">
+<style>
+:root{--canvas:#eef0f4;--paper:#f7f7f8;--rule:#dde1e8;--ink:#10172a;--mute:#5d6578;--navy:#2f4c8f;--navy2:#223a70;--onnavy:#fff;--panel:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--canvas:#141a29;--paper:#1b2236;--rule:#2b3550;--ink:#eef0f6;--mute:#a3abc0;--navy:#7d9be0;--navy2:#9bb3ec;--onnavy:#0f1626;--panel:#1b2236}}
+:root[data-theme="dark"]{--canvas:#141a29;--paper:#1b2236;--rule:#2b3550;--ink:#eef0f6;--mute:#a3abc0;--navy:#7d9be0;--navy2:#9bb3ec;--onnavy:#0f1626;--panel:#1b2236}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--canvas);color:var(--ink);font:400 17px/1.55 "Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--canvas);z-index:30}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+#fb{position:fixed;z-index:1;left:50%;top:44%;width:min(70vw,420px);aspect-ratio:1.586;transform:translate(-50%,-50%) rotate(-6deg);background:#f7f7f8;border-radius:7%;box-shadow:0 30px 60px -20px rgba(16,23,42,.35);display:none;place-items:center}
+#fb svg{width:46%}
+.nogl #fb{display:grid}.nogl #gl{display:none}
+main{position:relative;z-index:2}
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,4vw,56px);transition:background .3s,box-shadow .3s}
+nav.s{background:color-mix(in srgb,var(--canvas) 92%,transparent);box-shadow:0 1px 0 var(--rule)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.logo svg{width:26px;height:26px}
+.links{display:flex;gap:28px;align-items:center}
+.links a{color:var(--ink);text-decoration:none;font-size:15px}
+.links a:hover{color:var(--navy)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border-radius:999px;font:500 16px "Hanken Grotesk",system-ui,sans-serif;text-decoration:none;border:1.5px solid var(--navy);background:var(--navy);color:var(--onnavy)!important;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:var(--navy2)}
+.btn.o{background:transparent;color:var(--ink)!important;border-color:var(--ink)}
+.btn.o:hover{background:var(--ink);color:var(--canvas)!important}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+.st{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:120px clamp(20px,6vw,96px)}
+.st.tall{min-height:150vh}
+.col{max-width:520px}.col.r{margin-left:auto}
+h1,h2{margin:0 0 .4em;font-weight:700;letter-spacing:-.035em;line-height:.98}
+h1{font-size:clamp(3.1rem,8.6vw,8rem)}
+h2{font-size:clamp(2.2rem,5.4vw,4.6rem)}
+h3{margin:0 0 .3em;font-size:1.15rem;letter-spacing:-.01em}
+p{margin:0 0 1em;color:var(--mute);max-width:46ch}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+em.it{font-style:italic}
+.cap{position:sticky;top:42vh;max-width:340px;padding:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,56px);max-width:760px}
+.two div{border-top:1.5px solid var(--ink);padding-top:14px}
+.two div+div{border-color:var(--navy)}
+.steps{display:flex;flex-direction:column;gap:6px;margin-top:20px}
+.steps button{all:unset;cursor:pointer;display:block;padding:14px 0 14px 20px;border-left:2px solid var(--rule);color:var(--mute);transition:.25s}
+.steps button b{display:block;color:var(--ink);font-size:1.15rem}
+.steps button[aria-selected=true]{border-color:var(--navy);color:var(--ink)}
+.steps button:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.phone{width:min(300px,78vw);aspect-ratio:9/18.5;background:var(--panel);border:8px solid var(--ink);border-radius:38px;box-shadow:0 40px 70px -30px rgba(16,23,42,.45);position:relative;overflow:hidden;flex:none}
+.phone::before{content:"";position:absolute;top:8px;left:50%;width:84px;height:22px;margin-left:-42px;background:var(--ink);border-radius:12px;z-index:3}
+.scr{position:absolute;inset:0;padding:54px 20px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;transition:opacity .45s,transform .45s}
+.scr[hidden]{display:flex;opacity:0;transform:translateY(14px);pointer-events:none}
+.ring{width:120px;height:120px;border-radius:50%;border:2px solid var(--navy);margin-top:70px;animation:rg 2s ease-out infinite}
+@keyframes rg{from{transform:scale(.4);opacity:.9}to{transform:scale(1.5);opacity:0}}
+.av{width:76px;height:76px;border-radius:50%;background:var(--navy);color:var(--onnavy);display:grid;place-items:center;font-weight:700;font-size:26px;margin-top:10px}
+.row{width:100%;padding:11px 14px;border:1px solid var(--rule);border-radius:12px;font-size:14px;text-align:left;color:var(--ink)}
+.row small{display:block;color:var(--mute);font-size:12px}
+.pb{width:100%;padding:12px;border-radius:12px;background:var(--navy);color:var(--onnavy);font-weight:500;font-size:14px;margin-top:4px}
+.demo{display:flex;gap:clamp(24px,5vw,72px);align-items:center;flex-wrap:wrap;justify-content:flex-end;width:100%}
+.note{font-size:13px;color:var(--mute)}
+.uc{display:flex;flex-direction:column;border-top:1.5px solid var(--ink);margin-top:20px}
+.uc button{all:unset;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule);font-size:1.35rem;letter-spacing:-.02em;font-weight:500}
+.uc button span{font-size:14px;font-weight:400;color:var(--mute);letter-spacing:0}
+.uc button[aria-selected=true]{color:var(--navy)}
+.uc button:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.ucd{min-height:3.2em}
+.drag{position:absolute;inset:0;touch-action:pan-y;cursor:grab}
+.drag:active{cursor:grabbing}
+.rb{position:absolute;bottom:6vh;left:50%;transform:translateX(-50%)}
+.faq details{border-top:1px solid var(--rule);padding:14px 0;max-width:560px}
+.faq summary{cursor:pointer;font-weight:500;font-size:1.05rem;list-style-position:outside}
+.faq details p{margin:.6em 0 0}
+footer{position:relative;z-index:2;padding:56px clamp(20px,6vw,96px) 40px;border-top:1px solid var(--rule);background:var(--canvas);display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;font-size:15px;color:var(--mute)}
+footer a{color:var(--ink)}
+.intro{animation:in 1.2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes in{from{opacity:0;transform:translateY(24px)}}
+@media (max-width:820px){
+.links a:not(.btn){display:none}
+.st{align-items:flex-end;padding-top:48vh;padding-bottom:56px}
+.st.f{align-items:flex-start}
+.st.tall{min-height:130vh;align-items:flex-start;padding-top:20vh}
+.two{grid-template-columns:1fr}
+.demo{justify-content:center}
+.cap{top:62vh}
+.rb{bottom:5vh}
+}
+@media (prefers-reduced-motion:reduce){.ring,.intro{animation:none}html{scroll-behavior:auto}.scr{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="f" viewBox="0 0 100 100"><path fill="var(--navy)" d="M96 6C86 10 66 16 52 23 36 31 27 42 22 53c14-12 34-20 51-24 12-3 20-12 23-23zM58 50C45 56 33 62 25 70 15 80 7 93 3 97c3-12 11-26 21-34 8-7 22-9 36-13z"/></symbol></defs></svg>
+<nav id="nav">
+<a class="logo" href="#top" aria-label="Flex Card home"><svg aria-hidden="true"><use href="#f"/></svg>Flex Card</a>
+<div class="links"><a href="#how">How it works</a><a href="#uses">Use cases</a><a href="#faq">FAQ</a><a class="btn" href="#contact" data-contact>Get in touch</a></div>
+</nav>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div id="fb" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#f"/></svg></div>
+<main id="top">
+<section class="st f" data-pose="1.7,0,1,-0.55,-0.5,0.12">
+<div class="col intro"><h1>One card. A world of possibilities.</h1>
+<p>Flex Card is a physical card that opens a digital destination when you tap it against a compatible phone.</p>
+<div class="cta"><a class="btn" href="#contact" data-contact>Get in touch</a><a class="btn o" href="#how">See how it works</a></div></div>
+</section>
+
+<section class="st tall" data-pose="0,0,1.35,-0.15,1.3,0,1" aria-label="The card edge">
+<div class="cap"><h3>Made to be held.</h3><p>A matte white face and a soft, rounded edge. Nothing on it but the mark.</p></div>
+</section>
+<section class="st tall" data-pose="0,0,1.5,0,0,0,1" aria-label="The card face">
+<div class="cap" style="margin-left:auto"><h3>One mark.</h3><p>The Flex F in navy, centered on a clean white surface.</p></div>
+</section>
+
+<section class="st" data-pose="-2.6,0.2,.75,-0.35,0.4,0.2">
+<div class="col r"><h2>Details shouldn’t live on paper alone.</h2>
+<div class="two"><div><h3>A printed card</h3><p>Holds a few lines. Someone has to type them in, and many never do.</p></div><div><h3>A Flex Card</h3><p>One tap opens the page you chose, ready to read, save or follow.</p></div></div></div>
+</section>
+
+<section class="st" id="how" data-pose="-2.5,0.35,.75,-0.9,0.3,0.15">
+<div class="demo"><div class="col" style="margin-right:auto"><h2>Tap. Open. Connect.</h2>
+<div class="steps" role="tablist" aria-label="How Flex Card works">
+<button role="tab" aria-selected="true" data-s="0"><b>1. Tap</b>Hold the card near a compatible phone with NFC turned on.</button>
+<button role="tab" aria-selected="false" data-s="1"><b>2. Open</b>The phone offers the page linked to that card.</button>
+<button role="tab" aria-selected="false" data-s="2"><b>3. Connect</b>Save contact details, follow links or browse the content.</button></div>
+<p class="note" style="margin-top:16px">Illustration only. This animation does not activate NFC. The page shown is a sample.</p></div>
+<div class="phone" role="img" aria-label="Sample phone screen for a Flex Card destination">
+<div class="scr" id="s0"><div class="ring"></div><div>Hold near the card</div></div>
+<div class="scr" id="s1" hidden><div class="ring" style="margin-top:90px;animation:none;opacity:.35;transform:scale(.7)"></div><div><b>Open page?</b><br><span class="note">sample.flexcard.example</span></div><div class="pb" style="margin-top:20px">Open</div></div>
+<div class="scr" id="s2" hidden><div class="av">AS</div><b>Alex Sample</b><span class="note">Sample profile</span>
+<div class="row"><small>Phone</small>+00 000 000 000</div><div class="row"><small>Email</small>hello@example.com</div><div class="pb">Save contact</div></div>
+</div></div>
+</section>
+
+<section class="st" id="uses" data-pose="2.6,-0.4,.65,-0.4,-0.5,0.1">
+<div class="col"><h2>One card, pointed where you need.</h2>
+<p>Each card links to one destination. Here is what that can be.</p>
+<div class="uc" role="tablist" aria-label="Use cases">
+<button role="tab" aria-selected="true" data-u="0">Business profile<span>Contact and links</span></button>
+<button role="tab" aria-selected="false" data-u="1">Restaurant menu<span>Dishes and prices</span></button>
+<button role="tab" aria-selected="false" data-u="2">Product catalog<span>Items and details</span></button>
+<button role="tab" aria-selected="false" data-u="3">Professional networking<span>Introduce yourself</span></button></div>
+<p class="ucd" id="ucd" style="margin-top:18px"></p>
+<p class="note">QR code available on request, based on your needs. Tell us what you have in mind and we will confirm what is possible.</p></div>
+</section>
+
+<section class="st tall" id="inspect" data-pose="0,0,1.5,-0.25,0.35,0,1" style="position:relative" aria-label="Inspect the card">
+<div class="drag" id="drag" tabindex="0" role="group" aria-label="Drag to rotate the card. Arrow keys also rotate."></div>
+<div class="rb"><p class="note" style="margin:0 0 10px;text-align:center">Drag or use arrow keys to turn the card</p><div style="text-align:center"><button class="btn o" id="reset" style="min-height:40px;padding:0 20px">Reset view</button></div></div>
+</section>
+
+<section class="st" id="faq" data-pose="2.5,0,.65,-0.5,-0.3,0.1">
+<div class="col faq" style="max-width:560px"><h2>Good to know.</h2>
+<details><summary>What do I need to use it?</summary><p>A phone with NFC. Tap the card against the phone and follow the prompt.</p></details>
+<details><summary>Can the linked page change later?</summary><p>No. The destination is set for each card.</p></details>
+<details><summary>Does it come with a QR code?</summary><p>Only if you ask. The base card is white with the navy Flex mark.</p></details>
+<details><summary>What can it link to?</summary><p>A profile, menu, catalog or other page. Get in touch and we will talk it through.</p></details></div>
+</section>
+
+<section class="st f" id="contact" data-pose="0,0.1,1.15,-0.55,-0.45,0.1" style="align-items:flex-end;padding-bottom:12vh;text-align:center;justify-content:center">
+<div><h2>Put your world in one card.</h2><div class="cta" style="justify-content:center"><a class="btn" href="#contact" data-contact>Get in touch</a></div></div>
+</section>
+</main>
+<footer><div><a class="logo" href="#top"><svg aria-hidden="true"><use href="#f"/></svg>Flex Card</a></div><div>Contact and social links will be added here.<br>© Flex Card</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// Set this to the real contact link (form, WhatsApp, email, etc.)
+const CONTACT_URL = "#contact";
+document.querySelectorAll("[data-contact]").forEach(a=>a.href=CONTACT_URL);
+const nav=document.getElementById("nav");
+addEventListener("scroll",()=>nav.classList.toggle("s",scrollY>20),{passive:true});
+const RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+// How it works
+const scrs=[0,1,2].map(i=>document.getElementById("s"+i));
+document.querySelectorAll(".steps button").forEach(b=>b.onclick=()=>{
+ const n=+b.dataset.s;
+ document.querySelectorAll(".steps button").forEach(x=>x.setAttribute("aria-selected",x===b));
+ scrs.forEach((s,i)=>s.hidden=i!==n);
+});
+// Use cases
+const UC=["A page with your name, role, phone, email and links, ready to save.","A menu page guests open at the table. Dishes, descriptions and prices.","A catalog page showing your products, with details and ways to reach you.","A short introduction for events and meetings, with the links that matter."];
+const ucd=document.getElementById("ucd");ucd.textContent=UC[0];
+document.querySelectorAll(".uc button").forEach(b=>b.onclick=()=>{
+ document.querySelectorAll(".uc button").forEach(x=>x.setAttribute("aria-selected",x===b));ucd.textContent=UC[+b.dataset.u];
+});
+document.querySelectorAll(".faq details").forEach(d=>d.addEventListener("toggle",()=>{}));
+
+// 3D card
+(function(){
+ let ok=false;try{const c=document.createElement("canvas");ok=!!(window.THREE&&(c.getContext("webgl")||c.getContext("experimental-webgl")))}catch(e){}
+ if(!ok){document.documentElement.classList.add("nogl");return}
+ const cv=document.getElementById("gl");
+ const R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+ R.outputEncoding=THREE.sRGBEncoding;R.setClearColor(0,0);
+ const S=new THREE.Scene();const cam=new THREE.PerspectiveCamera(35,1,.1,50);cam.position.z=8;
+ S.add(new THREE.HemisphereLight(0xffffff,0xb9c2d6,.85));
+ const key=new THREE.DirectionalLight(0xffffff,.9);key.position.set(-3,4,5);S.add(key);
+ const rim=new THREE.DirectionalLight(0xdfe7ff,.35);rim.position.set(4,-1,-3);S.add(rim);
+ const W=3.4,H=2.14,r=.3,D=.1;
+ const sh=new THREE.Shape();const x=-W/2,y=-H/2;
+ sh.moveTo(x+r,y);sh.lineTo(x+W-r,y);sh.quadraticCurveTo(x+W,y,x+W,y+r);sh.lineTo(x+W,y+H-r);sh.quadraticCurveTo(x+W,y+H,x+W-r,y+H);sh.lineTo(x+r,y+H);sh.quadraticCurveTo(x,y+H,x,y+H-r);sh.lineTo(x,y+r);sh.quadraticCurveTo(x,y,x+r,y);
+ const g=new THREE.ExtrudeGeometry(sh,{depth:D,bevelEnabled:true,bevelThickness:.035,bevelSize:.035,bevelSegments:6,curveSegments:20});g.translate(0,0,-D/2);
+ const card=new THREE.Mesh(g,new THREE.MeshStandardMaterial({color:0xf4f5f7,roughness:.62,metalness:0}));
+ // logo texture (approximate trace; replace with supplied vector)
+ const lc=document.createElement("canvas");lc.width=lc.height=512;const c=lc.getContext("2d");
+ c.scale(5.12,5.12);c.fillStyle="#2f4c8f";
+ const P=new Path2D("M96 6C86 10 66 16 52 23 36 31 27 42 22 53c14-12 34-20 51-24 12-3 20-12 23-23zM58 50C45 56 33 62 25 70 15 80 7 93 3 97c3-12 11-26 21-34 8-7 22-9 36-13z");
+ c.fill(P);
+ const tx=new THREE.CanvasTexture(lc);tx.encoding=THREE.sRGBEncoding;tx.anisotropy=8;
+ const lg=new THREE.Mesh(new THREE.PlaneGeometry(1.35,1.35),new THREE.MeshStandardMaterial({map:tx,transparent:true,roughness:.6,polygonOffset:true,polygonOffsetFactor:-2}));
+ lg.position.z=D/2+.036;card.add(lg);
+ // soft shadow
+ const sc=document.createElement("canvas");sc.width=sc.height=128;const sx=sc.getContext("2d");
+ const gr=sx.createRadialGradient(64,64,0,64,64,64);gr.addColorStop(0,"rgba(16,23,42,.38)");gr.addColorStop(1,"rgba(16,23,42,0)");sx.fillStyle=gr;sx.fillRect(0,0,128,128);
+ const shd=new THREE.Mesh(new THREE.PlaneGeometry(4.6,3),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(sc),transparent:true,depthWrite:false}));
+ shd.rotation.x=-Math.PI/2;shd.position.y=-1.55;
+ const root=new THREE.Group();root.add(shd,card);S.add(root);
+
+ let poses=[],mobile=false,fit=1,aspect=1;
+ function build(){poses=[...document.querySelectorAll("[data-pose]")].map(e=>({top:e.getBoundingClientRect().top+scrollY,h:e.offsetHeight,p:e.dataset.pose.split(",").map(Number)}))}
+ function size(){const w=innerWidth,h=innerHeight;R.setPixelRatio(Math.min(devicePixelRatio,mobile?1.5:2));R.setSize(w,h,false);aspect=w/h;cam.aspect=aspect;cam.updateProjectionMatrix();mobile=w<=820;fit=Math.min(1,(aspect*5.04*.8)/3.4/1.0);build()}
+ addEventListener("resize",size);size();addEventListener("load",build);
+ const ss=t=>t*t*(3-2*t);
+ function pose(){
+  const m=scrollY+innerHeight*.5;let i=0;
+  for(let k=0;k<poses.length;k++)if(poses[k].top<=m)i=k;
+  const a=poses[i],b=poses[Math.min(i+1,poses.length-1)];
+  let t=a===b?0:(m-(a.top+a.h*.5))/((b.top+b.h*.5)-(a.top+a.h*.5));t=ss(Math.max(0,Math.min(1,t)));
+  if(m<a.top+a.h*.5&&i===0)t=0;
+  const o=a.p.map((v,k)=>v+(b.p[k]-v)*t);
+  let [px,py,s,rx,ry,rz]=o;const foc=(a.p[6]||0)+((b.p[6]||0)-(a.p[6]||0))*t;
+  if(mobile){px=0;py=py*(foc)+ (1-foc)*1.55;s=s*(foc?1:.62)}
+  return [px*(mobile?1:Math.min(1,aspect/1.6)),py,s*fit,rx,ry,rz,foc];
+ }
+ let cur=null,yaw=0,pit=0,tyaw=0,tpit=0,t0=performance.now(),mx=0,my=0,tmx=0,tmy=0,visible=true;
+ const ins=document.getElementById("inspect");
+ const dr=document.getElementById("drag");let down=false,lx=0,ly=0;
+ dr.addEventListener("pointerdown",e=>{down=true;lx=e.clientX;ly=e.clientY;dr.setPointerCapture(e.pointerId)});
+ dr.addEventListener("pointermove",e=>{if(!down)return;tyaw=Math.max(-1.2,Math.min(1.2,tyaw+(e.clientX-lx)*.008));tpit=Math.max(-.7,Math.min(.7,tpit+(e.clientY-ly)*.006));lx=e.clientX;ly=e.clientY});
+ ["pointerup","pointercancel"].forEach(n=>dr.addEventListener(n,()=>down=false));
+ dr.addEventListener("keydown",e=>{const k={ArrowLeft:[-.2,0],ArrowRight:[.2,0],ArrowUp:[0,-.15],ArrowDown:[0,.15]}[e.key];if(!k)return;e.preventDefault();tyaw=Math.max(-1.2,Math.min(1.2,tyaw+k[0]));tpit=Math.max(-.7,Math.min(.7,tpit+k[1]))});
+ document.getElementById("reset").onclick=()=>{tyaw=0;tpit=0};
+ addEventListener("pointermove",e=>{if(mobile||RM)return;tmx=(e.clientX/innerWidth-.5);tmy=(e.clientY/innerHeight-.5)},{passive:true});
+ document.addEventListener("visibilitychange",()=>visible=!document.hidden);
+ // intro
+ let intro=RM?1:0;
+ function frame(now){
+  requestAnimationFrame(frame);if(!visible)return;
+  const p=pose(),k=RM?1:.12;
+  if(!cur)cur=p.slice();else for(let i=0;i<6;i++)cur[i]+=(p[i]-cur[i])*k;
+  const ir=intro<1?(intro=Math.min(1,intro+.012),1-Math.pow(1-intro,3)):1;
+  const e=(now-t0)/1000;const fl=RM?0:Math.sin(e*1.05)*.07;
+  const inI=Math.max(0,1-(Math.abs(scrollY+innerHeight*.5-(ins.getBoundingClientRect().top+scrollY+ins.offsetHeight*.5))/(ins.offsetHeight*.6)));
+  if(inI<=0){tyaw*=.97;tpit*=.97}
+  yaw+=(tyaw-yaw)*.12;pit+=(tpit-pit)*.12;mx+=(tmx-mx)*.06;my+=(tmy-my)*.06;
+  root.position.set(cur[0],cur[1]+fl-(1-ir)*1.2,0);root.scale.setScalar(cur[2]);
+  card.rotation.set(cur[3]+pit+my*.18+(RM?0:Math.sin(e*.7)*.03)+(1-ir)*.9,cur[4]+yaw+mx*.25,cur[5]);
+  shd.material.opacity=ir*(1-Math.min(.6,Math.abs(Math.sin(cur[3]))*.3));
+  R.render(S,cam);
+ }
+ requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
