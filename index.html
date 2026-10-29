@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="ld">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Flex Card — One card. A world of possibilities.</title>
+<meta name="description" content="Flex Card is a physical card that opens a digital destination with a tap.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,700;1,700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="f" viewBox="0 0 100 100"><path fill="var(--navy)" d="M78.7 38.8 L42.0 51.7 L34.2 55.5 L27.3 60.1 L18.1 68.7 L11.8 77.6 L7.8 85.9 L2.9 99.4 L29.9 89.9 L41.4 60.9 L65.8 64.7ZM96.8 0.3 L49.7 17.2 L42.2 21.0 L36.5 25.0 L29.3 32.5 L25.0 39.7 L17.5 61.2 L23.3 53.4 L29.0 47.7 L36.8 42.2 L47.1 37.4 L78.4 26.1 L85.3 22.4 L91.1 16.1 L93.7 10.3Z"/></symbol></defs></svg>
+<div id="sp" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#f"/></svg><b>Flex Card</b></div>
+<nav id="nav">
+<a class="logo" href="#top" aria-label="Flex Card home"><svg aria-hidden="true"><use href="#f"/></svg>Flex Card</a>
+<div class="links"><a href="#how">How it works</a><a href="#uses">Use cases</a><a href="#faq">FAQ</a><a class="btn" href="#contact" data-contact>Get in touch</a></div>
+</nav>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div id="cd" aria-hidden="true"></div><div id="cr" aria-hidden="true"></div>
+<div id="fb" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#f"/></svg></div>
+<main id="top">
+<section class="st f" data-pose="1.7,0,1,-0.55,-0.5,0.12">
+<div class="col intro"><h1>One card.<br>A world of<br>possibilities.</h1>
+<p>Flex Card is a physical card that opens a digital destination when you tap it against a compatible phone.</p>
+<div class="cta"><a class="btn" href="#contact" data-contact>Get in touch</a><a class="btn o" href="#how">See how it works</a></div></div>
+</section>
+
+<section class="st tall" data-pose="0,0,1.35,-0.15,1.3,0,1" aria-label="The card edge">
+<div class="cap"><h3>Made to be held.</h3><p>A matte white face and a soft, rounded edge. Nothing on it but the mark.</p></div>
+</section>
+<section class="st tall" data-pose="-1.3,0,1.2,0,0,0,1" aria-label="The card face">
+<div class="cap" style="margin-left:auto"><h3>One mark.</h3><p>The Flex F in navy, centered on a clean white surface.</p></div>
+</section>
+
+<section class="st" data-pose="-2.6,0.2,.75,-0.35,0.4,0.2">
+<div class="col r"><h2>Details shouldn’t live on paper alone.</h2>
+<div class="two"><div><h3>A printed card</h3><p>Holds a few lines. Someone has to type them in, and many never do.</p></div><div><h3>A Flex Card</h3><p>One tap opens the page you chose, ready to read, save or follow.</p></div></div></div>
+</section>
+
+<section class="st" id="how" data-pose="-2.5,0.35,.75,-0.9,0.3,0.15">
+<div class="demo"><div class="col" style="margin-right:auto"><h2>Tap. Open. Connect.</h2>
+<div class="steps" role="tablist" aria-label="How Flex Card works">
+<button role="tab" aria-selected="true" data-s="0"><b>1. Tap</b>Hold the card near a compatible phone with NFC turned on.</button>
+<button role="tab" aria-selected="false" data-s="1"><b>2. Open</b>The phone offers the page linked to that card.</button>
+<button role="tab" aria-selected="false" data-s="2"><b>3. Connect</b>Save contact details, follow links or browse the content.</button></div>
+<p class="note" style="margin-top:16px">Illustration only. This animation does not activate NFC. The page shown is a sample.</p></div>
+<div class="phone" role="img" aria-label="Sample phone screen for a Flex Card destination">
+<div class="scr" id="s0"><div class="ring"></div><div>Hold near the card</div></div>
+<div class="scr" id="s1" hidden><div class="ring" style="margin-top:90px;animation:none;opacity:.35;transform:scale(.7)"></div><div><b>Open page?</b><br><span class="note">sample.flexcard.example</span></div><div class="pb" style="margin-top:20px">Open</div></div>
+<div class="scr" id="s2" hidden><div class="av">AS</div><b>Alex Sample</b><span class="note">Sample profile</span>
+<div class="row"><small>Phone</small>+00 000 000 000</div><div class="row"><small>Email</small>hello@example.com</div><div class="pb">Save contact</div></div>
+</div></div>
+</section>
+
+<section class="st" id="uses" data-pose="2.6,-0.4,.65,-0.4,-0.5,0.1">
+<div class="col"><h2>One card, pointed where you need.</h2>
+<p>Each card links to one destination. Here is what that can be.</p>
+<div class="uc" role="tablist" aria-label="Use cases">
+<button role="tab" aria-selected="true" data-u="0">Business profile<span>Contact and links</span></button>
+<button role="tab" aria-selected="false" data-u="1">Restaurant menu<span>Dishes and prices</span></button>
+<button role="tab" aria-selected="false" data-u="2">Product catalog<span>Items and details</span></button>
+<button role="tab" aria-selected="false" data-u="3">Professional networking<span>Introduce yourself</span></button></div>
+<p class="ucd" id="ucd" style="margin-top:18px"></p>
+<p class="note">QR code available on request, based on your needs. Tell us what you have in mind and we will confirm what is possible.</p></div>
+</section>
+
+<section class="st tall" id="inspect" data-pose="0,0,1.5,-0.25,0.35,0,1" style="position:relative" aria-label="Inspect the card">
+<div class="drag" id="drag" tabindex="0" role="group" aria-label="Drag to rotate the card. Arrow keys also rotate."></div>
+<div class="rb"><p class="note" style="margin:0 0 10px;text-align:center">Drag or use arrow keys to turn the card</p><div style="text-align:center"><button class="btn o" id="reset" style="min-height:40px;padding:0 20px">Reset view</button></div></div>
+</section>
+
+<section class="st" id="faq" data-pose="2.5,0,.65,-0.5,-0.3,0.1">
+<div class="col faq" style="max-width:560px"><h2>Good to know.</h2>
+<p class="note" id="fh" style="margin-bottom:14px">Hover over a question to see the answer.</p>
+<div class="q open"><button class="qh" id="q1" aria-expanded="true" aria-controls="a1">What do I need to get started?</button><div class="qa" id="a1" role="region" aria-labelledby="q1"><div><p>Just a phone with NFC. Hold your Flex Card near it, follow the prompt, and your page opens in a moment.</p></div></div></div>
+<div class="q"><button class="qh" id="q2" aria-expanded="false" aria-controls="a2">Can I change where my card leads?</button><div class="qa" id="a2" role="region" aria-labelledby="q2"><div><p>Yes. Update your destination whenever you like, and keep it protected with a password so only you can make changes. Prefer it locked for good? Tell us from the start and we’ll set it as permanent.</p></div></div></div>
+<div class="q"><button class="qh" id="q3" aria-expanded="false" aria-controls="a3">Can I add a QR code?</button><div class="qa" id="a3" role="region" aria-labelledby="q3"><div><p>Yes, whenever it suits your needs. Just tell us. By default your card stays clean: white with the navy Flex mark.</p></div></div></div>
+<div class="q"><button class="qh" id="q4" aria-expanded="false" aria-controls="a4">What can my card share?</button><div class="qa" id="a4" role="region" aria-labelledby="q4"><div><p>Your contact details, Wi-Fi, location, email, any URL, or Bluetooth. One tap, and the person holding your card gets exactly what you want them to have.</p></div></div></div>
+</div>
+</section>
+
+<section class="st f" id="contact" data-pose="0,.75,.8,-0.55,-0.45,0.1" style="align-items:flex-end;padding-bottom:12vh;text-align:center;justify-content:center">
+<div><h2>Put your world in one card.</h2><div class="cta" style="justify-content:center"><a class="btn" href="#contact" data-contact>Get in touch</a></div></div>
+</section>
+</main>
+<footer><div class="fl"><a class="logo" href="#top"><svg aria-hidden="true"><use href="#f"/></svg>Flex Card</a><p>One card. A world of possibilities.</p><p class="cp">© Flex Card</p></div>
+<div class="fr"><div class="fi">
+<a href="https://wa.me/6281221926046?text=Hi%20Flex%20Card%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Flex%20Card." target="_blank" rel="noopener" aria-label="WhatsApp" data-l="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7L4 20z"/><path d="M9.2 8.8c.3 2.6 2.4 4.7 5 5l1-1.3-1.8-.9-.8.6a3.6 3.6 0 0 1-1.7-1.7l.6-.8-.9-1.8-1.4 1z"/></svg></a>
+<a href="tel:+6281221926046" aria-label="Call 0812 2192 6046" data-l="Call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+<a href="mailto:flexcardofficial@gmail.com" aria-label="Email flexcardofficial@gmail.com" data-l="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></a>
+<a href="https://www.instagram.com/flexcardofficial" target="_blank" rel="noopener" aria-label="Instagram @flexcardofficial" data-l="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
+<a href="https://vm.tiktok.com/ZS9yUBSPxeMh4-025Gb/" target="_blank" rel="noopener" aria-label="TikTok" data-l="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11a4 4 0 1 1-4-4"/><path d="M14 3c.3 2.4 2 4.2 5 4.5"/></svg></a>
+</div>
+<div class="fm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>West Jakarta, ID</div></div>
+</footer>
+
+<div id="ct" hidden role="dialog" aria-modal="true" aria-labelledby="ctt"><div class="ctb"><h3 id="ctt">Get in touch</h3><p>Pick whatever suits you best. We’d love to hear what you have in mind.</p>
+<a class="ctl" href="https://wa.me/6281221926046?text=Hi%20Flex%20Card%2C%20I%E2%80%99d%20like%20to%20know%20more%20about%20the%20Flex%20Card." target="_blank" rel="noopener">WhatsApp<span>0812 2192 6046</span></a>
+<a class="ctl" href="mailto:flexcardofficial@gmail.com?subject=Flex%20Card%20inquiry">Email<span>flexcardofficial@gmail.com</span></a>
+<a class="ctl" href="https://www.instagram.com/flexcardofficial" target="_blank" rel="noopener">Instagram<span>@flexcardofficial</span></a>
+<a class="ctl" href="https://vm.tiktok.com/ZS9yUBSPxeMh4-025Gb/" target="_blank" rel="noopener">TikTok<span>Follow us</span></a>
+<a class="ctl" href="tel:+6281221926046">Call<span>0812 2192 6046</span></a>
+<button class="btn o" data-close style="width:100%;margin-top:6px">Close</button></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
