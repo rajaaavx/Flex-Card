@@ -1,244 +1,254 @@
-Flex Card --- One Card. A World of Possibilities.
+\# Flex Card
 
-A product-focused website concept for Flex Card, a physical card
 
-designed to connect people to a digital destination with a tap.
 
+\*\*One Card. A World of Possibilities.\*\*
 
 
-The experience combines a clean navy-and-white visual identity with a
 
-scroll-driven 3D card, interactive product storytelling, and sample
+Flex Card is a product website concept that introduces an NFC-enabled physical card designed to connect people to digital destinations with a single tap.
 
-digital-profile screens.
 
-Project status: Website prototype / concept. Product capabilities
 
-and contact details should be confirmed before public commercial use.
+The project focuses on creating a modern, interactive web experience to showcase the product, its potential use cases, and how it works.
 
 
 
-Preview
+<p align="center">
 
-\- Live demo: flexcard.vercel.app
+&#x20; <a href="https://flex-card-xi.vercel.app/">
 
-\- GitHub repository:
+&#x20;   <strong>Live Demo ↗</strong>
 
-&#x20; rajaaavx/Flex-Card
+&#x20; </a>
 
-About Flex Card
+&#x20; \&nbsp; | \&nbsp;
 
-Flex Card explores a simple idea: one physical card can lead to a useful
+&#x20; <a href="https://github.com/rajaaavx/Flex-Card">
 
-digital destination. Depending on the intended setup, that destination
+&#x20;   <strong>GitHub Repository ↗</strong>
 
-could be a business profile, restaurant menu, product catalog, or
+&#x20; </a>
 
-professional introduction.
+</p>
 
 
 
-The website presents the product through an interactive, editorial-style
+\## Overview
 
-experience rather than a conventional static landing page.
 
-Website Features
 
-\- Scroll-driven 3D card: A white card with the navy Flex mark
+Flex Card explores how a simple physical card can bridge the gap between offline interactions and digital experiences.
 
-&#x20; moves and changes orientation as visitors navigate the page.
 
-\- Product storytelling: Sections highlight the card's surface,
 
-&#x20; rounded edges, and minimalist design.
+By tapping the card against a compatible NFC-enabled smartphone, users can access a linked digital destination, such as a business profile, restaurant menu, product catalog, or professional introduction.
 
-\- How it works demo: An interactive three-step illustration
 
-&#x20; explains the tap, open, and connect flow.
 
-\- Interactive use cases: Visitors can switch between business
+The website presents this concept through an interactive product landing page with scroll-driven animations and 3D visualization.
 
-&#x20; profiles, restaurant menus, product catalogs, and professional
 
-&#x20; networking examples.
 
-\- Draggable card view: Visitors can rotate the 3D card using
+\## Features
 
-&#x20; pointer/touch interaction or keyboard arrow keys, then reset the
 
-&#x20; view.
 
-\- FAQ accordion: Answers common product questions.
+\- \*\*Interactive 3D Visualization\*\* – A 3D card experience that responds to scrolling and user interactions.
 
-\- Responsive layout: The layout adapts for smaller screens.
+\- \*\*Scroll-driven Animations\*\* – Dynamic card positioning and transitions throughout the page.
 
-\- Reduced-motion support: The experience respects the user's
+\- \*\*Interactive Product Demo\*\* – A visual three-step demonstration of the Tap, Open, and Connect experience.
 
-&#x20; reduced-motion preference and provides a fallback when WebGL is
+\- \*\*Multiple Use Cases\*\* – Showcases potential applications for business profiles, restaurant menus, product catalogs, and professional networking.
 
-&#x20; unavailable.
+\- \*\*Draggable 3D Card\*\* – Users can rotate the card through mouse, touch, or keyboard interactions.
 
-\- Contact CTA placeholder: The contact destination can be
+\- \*\*FAQ Section\*\* – Interactive accordion for product-related information.
 
-&#x20; configured for a future order or inquiry flow.
+\- \*\*Responsive Design\*\* – Adapted for desktop and mobile screen sizes.
 
-Tech Stack
+\- \*\*Reduced Motion Support\*\* – Provides an alternative experience for users who prefer reduced animations.
 
-\- HTML5
 
-\- CSS3
 
-\- Vanilla JavaScript
+\## Tech Stack
 
-\- Three.js for the 3D card experience
 
-\- Hanken Grotesk
 
-&#x20; typography
+| Technology | Purpose |
 
-\- CDN-hosted Three.js and Google Fonts
+|---|---|
 
-This prototype does not require a frontend framework or build step.
+| HTML5 | Website structure |
 
-Getting Started
+| CSS3 | Styling, layout, and animations |
 
-Run locally
+| JavaScript | Interactive functionality |
 
-1\. Clone the repository:
+| Three.js | 3D card visualization |
 
-&#x20;  git clone https://github.com/rajaaavx/Flex-Card.git
+| Google Fonts | Hanken Grotesk typography |
 
-&#x20;  cd Flex-Card
+| Vercel | Website deployment |
 
-2\. Open Flex Card — One card. A world of possibilities.html in a
 
-&#x20;  modern browser.
 
-&#x20;  Alternatively, start a local server from the repository directory:
+\## Project Structure
 
-&#x20;  python -m http.server 8000
 
-&#x20;  Then open
 
-&#x20;  http://localhost:8000/Flex%20Card%20%E2%80%94%20One%20card.%20A%20world%20of%20possibilities.html
-
-&#x20;  in your browser.
-
-Three.js and the font are loaded from external CDNs, so an internet
-
-connection is needed for those assets. A 3D fallback is included for
-
-browsers where WebGL is unavailable.
-
-
-
-Customization
-
-1\. Set the real contact destination
-
-In the JavaScript near the top of the script, update:
-
-const CONTACT\_URL = "#contact";
-
-Replace #contact with the actual WhatsApp link, email link, inquiry
-
-form, or ordering page before publishing.
-
-2\. Update product details
-
-Review the page copy and make sure all statements match the real
-
-product. In particular, confirm NFC compatibility, whether a QR code is
-
-available, and whether a card's linked destination can be changed after
-
-setup.
-
-3\. Replace the sample profile
-
-The phone mockup currently contains sample information, including "Alex
-
-Sample" and placeholder contact details. Replace it with approved demo
-
-content or keep it clearly marked as illustrative.
-
-4\. Replace the logo approximation
-
-The current 3D logo is an approximate trace drawn in code. For a closer
-
-match to the official brand, replace it with the approved SVG logo or a
-
-suitable high-quality texture.
-
-5\. Add real business links
-
-Update the footer with verified contact details and official social
-
-links when they are available.
-
-Project Structure
+```text
 
 Flex-Card/
 
-└── Flex Card — One card. A world of possibilities.html
+├── Asset/
 
-The current prototype is a single HTML page containing its markup,
+├── Laporan/
 
-styles, and JavaScript.
+├── index.html
 
-Current Limitations
+├── style.css
 
-\- The phone screen is an illustration; the website animation does
+├── script.js
 
-&#x20; not activate NFC.
+└── README.md
 
-\- The digital profile and use-case screens are examples, not a
+```
 
-&#x20; connected customer dashboard.
 
-\- The contact CTA currently points to #contact; connect it to a real
 
-&#x20; contact or ordering destination before launch.
+\## Getting Started
 
-\- The 3D logo is an approximation and should be replaced with the
 
-&#x20; official asset.
 
-\- No checkout, payment, account system, or backend is included in this
+\### Prerequisites
 
-&#x20; prototype.
 
-\- Product claims should be verified before the website is used as a
 
-&#x20; live sales page.
+\- A modern web browser.
 
-Roadmap
+\- Git installed on your machine.
 
-\- \[ ] Replace the approximate logo with the official vector asset.
+\- Internet connection for externally hosted libraries and fonts.
 
-\- \[ ] Connect the primary CTA to a real contact or ordering
 
-&#x20; destination.
 
-\- \[ ] Verify all product descriptions and FAQ answers.
+\### Installation
 
-\- \[ ] Test the experience across desktop, tablet, and mobile browsers.
 
-\- \[ ] Optimize 3D rendering and loading performance on mobile devices.
 
-\- \[ ] Add verified social links and business contact information.
+1\. Clone the repository:
 
-\- \[ ] Deploy the final version to Vercel and verify the live URL.
 
-Contributing
 
-This repository currently represents a product website prototype. For
+```bash
 
-suggestions or improvements, open an issue or submit a pull request.
+git clone https://github.com/rajaaavx/Flex-Card.git
 
-License
+```
 
-No license has been specified yet. Unless a license is added to the
 
-repository, reuse and redistribution are not automatically permitted.
+
+2\. Navigate to the project directory:
+
+
+
+```bash
+
+cd Flex-Card
+
+```
+
+
+
+3\. Start a local development server:
+
+
+
+```bash
+
+python -m http.server 8000
+
+```
+
+
+
+4\. Open the following address in your browser:
+
+
+
+```text
+
+http://localhost:8000
+
+```
+
+
+
+Alternatively, open `index.html` directly in your browser.
+
+
+
+\## Project Scope \& Limitations
+
+
+
+This repository contains a front-end website prototype.
+
+
+
+\- The 3D card and smartphone interactions are visual demonstrations, not actual NFC operations.
+
+\- NFC functionality requires a physical NFC card and compatible device.
+
+\- Digital profile screens contain illustrative sample data.
+
+\- No backend, database, authentication, or payment integration is currently implemented.
+
+\- Product destination management is presented as a concept rather than a working dashboard.
+
+
+
+\## Future Improvements
+
+
+
+\- Integrate actual NFC functionality with physical cards.
+
+\- Develop a customizable digital profile management system.
+
+\- Implement backend services for managing card destinations.
+
+\- Improve 3D rendering performance on mobile devices.
+
+\- Add QR code support and additional customization options.
+
+
+
+\## Deployment
+
+
+
+The website is deployed using Vercel.
+
+
+
+\*\*Live Website:\*\* https://flex-card-xi.vercel.app/
+
+
+
+\## License
+
+
+
+No license has been specified for this project yet.
+
+
+
+\---
+
+
+
+\*Developed as a web development project exploring interactive product presentation, 3D web visualization, and NFC-based digital experiences.\*
 
