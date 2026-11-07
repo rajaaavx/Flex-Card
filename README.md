@@ -2,35 +2,13 @@
 
 
 
-\*\*One Card. A World of Possibilities.\*\*
+A modern, interactive product landing page concept for an NFC-enabled
+
+digital business card.
 
 
 
-Flex Card is a product website concept that introduces an NFC-enabled physical card designed to connect people to digital destinations with a single tap.
-
-
-
-The project focuses on creating a modern, interactive web experience to showcase the product, its potential use cases, and how it works.
-
-
-
-<p align="center">
-
-&#x20; <a href="https://flex-card-xi.vercel.app/">
-
-&#x20;   <strong>Live Demo ↗</strong>
-
-&#x20; </a>
-
-&#x20; \&nbsp; | \&nbsp;
-
-&#x20; <a href="https://github.com/rajaaavx/Flex-Card">
-
-&#x20;   <strong>GitHub Repository ↗</strong>
-
-&#x20; </a>
-
-</p>
+\*\*Live Demo:\*\* <https://flex-card-xi.vercel.app/>
 
 
 
@@ -38,15 +16,19 @@ The project focuses on creating a modern, interactive web experience to showcase
 
 
 
-Flex Card explores how a simple physical card can bridge the gap between offline interactions and digital experiences.
+Flex Card explores how a physical NFC card can connect offline
+
+interactions with digital experiences. With a single tap on a compatible
+
+smartphone, the card can direct people to a digital destination such as
+
+a profile, restaurant menu, or product page.
 
 
 
-By tapping the card against a compatible NFC-enabled smartphone, users can access a linked digital destination, such as a business profile, restaurant menu, product catalog, or professional introduction.
+This project focuses on presenting that concept through an interactive
 
-
-
-The website presents this concept through an interactive product landing page with scroll-driven animations and 3D visualization.
+and visually engaging website.
 
 
 
@@ -54,21 +36,19 @@ The website presents this concept through an interactive product landing page wi
 
 
 
-\- \*\*Interactive 3D Visualization\*\* – A 3D card experience that responds to scrolling and user interactions.
+\-   Interactive product presentation
 
-\- \*\*Scroll-driven Animations\*\* – Dynamic card positioning and transitions throughout the page.
+\-   3D card visualization
 
-\- \*\*Interactive Product Demo\*\* – A visual three-step demonstration of the Tap, Open, and Connect experience.
+\-   Scroll-based animations and transitions
 
-\- \*\*Multiple Use Cases\*\* – Showcases potential applications for business profiles, restaurant menus, product catalogs, and professional networking.
+\-   Demonstration of the tap-to-connect concept
 
-\- \*\*Draggable 3D Card\*\* – Users can rotate the card through mouse, touch, or keyboard interactions.
+\-   Examples of potential use cases
 
-\- \*\*FAQ Section\*\* – Interactive accordion for product-related information.
+\-   Responsive website layout
 
-\- \*\*Responsive Design\*\* – Adapted for desktop and mobile screen sizes.
-
-\- \*\*Reduced Motion Support\*\* – Provides an alternative experience for users who prefer reduced animations.
+\-   FAQ section
 
 
 
@@ -76,45 +56,15 @@ The website presents this concept through an interactive product landing page wi
 
 
 
-| Technology | Purpose |
+\-   HTML
 
-|---|---|
+\-   CSS
 
-| HTML5 | Website structure |
+\-   JavaScript
 
-| CSS3 | Styling, layout, and animations |
+\-   Three.js
 
-| JavaScript | Interactive functionality |
-
-| Three.js | 3D card visualization |
-
-| Google Fonts | Hanken Grotesk typography |
-
-| Vercel | Website deployment |
-
-
-
-\## Project Structure
-
-
-
-```text
-
-Flex-Card/
-
-├── Asset/
-
-├── Laporan/
-
-├── index.html
-
-├── style.css
-
-├── script.js
-
-└── README.md
-
-```
+\-   Vercel
 
 
 
@@ -126,87 +76,79 @@ Flex-Card/
 
 
 
-\- A modern web browser.
+\-   Git
 
-\- Git installed on your machine.
+\-   A modern web browser
 
-\- Internet connection for externally hosted libraries and fonts.
-
-
-
-\### Installation
+\-   Python (optional, for running a local development server)
 
 
 
-1\. Clone the repository:
+\### Run Locally
 
 
 
-```bash
-
-git clone https://github.com/rajaaavx/Flex-Card.git
-
-```
+1\.  Clone the repository:
 
 
 
-2\. Navigate to the project directory:
+&#x20;   ``` bash
+
+&#x20;   git clone https://github.com/rajaaavx/Flex-Card.git
+
+&#x20;   ```
 
 
 
-```bash
-
-cd Flex-Card
-
-```
+2\.  Move into the project directory:
 
 
 
-3\. Start a local development server:
+&#x20;   ``` bash
+
+&#x20;   cd Flex-Card
+
+&#x20;   ```
 
 
 
-```bash
-
-python -m http.server 8000
-
-```
+3\.  Start a local server:
 
 
 
-4\. Open the following address in your browser:
+&#x20;   ``` bash
+
+&#x20;   python -m http.server 8000
+
+&#x20;   ```
 
 
 
-```text
-
-http://localhost:8000
-
-```
+4\.  Open <http://localhost:8000> in your browser.
 
 
 
-Alternatively, open `index.html` directly in your browser.
+You can also open `index.html` directly, although using a local server
+
+is recommended.
 
 
 
-\## Project Scope \& Limitations
+\## Project Scope
 
 
 
-This repository contains a front-end website prototype.
+This repository contains a front-end website prototype. The NFC
+
+interactions shown on the website are demonstrations of the product
+
+concept; the website does not itself implement NFC reading or writing.
 
 
 
-\- The 3D card and smartphone interactions are visual demonstrations, not actual NFC operations.
+There is currently no backend, database, authentication system, or
 
-\- NFC functionality requires a physical NFC card and compatible device.
-
-\- Digital profile screens contain illustrative sample data.
-
-\- No backend, database, authentication, or payment integration is currently implemented.
-
-\- Product destination management is presented as a concept rather than a working dashboard.
+card-management dashboard.
 
 
 
@@ -214,15 +156,13 @@ This repository contains a front-end website prototype.
 
 
 
-\- Integrate actual NFC functionality with physical cards.
+\-   Connect the concept to configurable digital profiles
 
-\- Develop a customizable digital profile management system.
+\-   Add a system for managing card destinations
 
-\- Implement backend services for managing card destinations.
+\-   Integrate and test physical NFC cards
 
-\- Improve 3D rendering performance on mobile devices.
-
-\- Add QR code support and additional customization options.
+\-   Improve performance and accessibility across devices
 
 
 
@@ -230,25 +170,21 @@ This repository contains a front-end website prototype.
 
 
 
-The website is deployed using Vercel.
+The project is deployed on Vercel:
 
 
 
-\*\*Live Website:\*\* https://flex-card-xi.vercel.app/
+<https://flex-card-xi.vercel.app/>
 
 
 
-\## License
+\------------------------------------------------------------------------
 
 
 
-No license has been specified for this project yet.
+Developed as a web development project exploring interactive product
+
+presentation and NFC-based digital experiences.
 
 
-
-\---
-
-
-
-\*Developed as a web development project exploring interactive product presentation, 3D web visualization, and NFC-based digital experiences.\*
 
